@@ -2,7 +2,6 @@ package com.github.martingaston.tictactoe.cli;
 
 import com.github.martingaston.tictactoe.board.Board;
 import com.github.martingaston.tictactoe.board.Symbol;
-import com.github.martingaston.tictactoe.cli.Display;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

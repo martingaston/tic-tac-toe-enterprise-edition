@@ -1,7 +1,5 @@
 package com.github.martingaston.tictactoe.board;
 
-import com.github.martingaston.tictactoe.board.Cell;
-import com.github.martingaston.tictactoe.board.Symbol;
 import org.junit.Before;
 import org.junit.Test;
 

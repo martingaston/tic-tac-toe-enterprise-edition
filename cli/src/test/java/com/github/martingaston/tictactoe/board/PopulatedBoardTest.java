@@ -1,14 +1,12 @@
 package com.github.martingaston.tictactoe.board;
 
-import com.github.martingaston.tictactoe.board.Board;
-import com.github.martingaston.tictactoe.board.Cell;
 import com.github.martingaston.tictactoe.state.StateFile;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 public class PopulatedBoardTest {
     private String[] createStringArrayFromBoard(Board board) {

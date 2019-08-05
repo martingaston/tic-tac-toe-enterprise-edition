@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class GameTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -29,7 +29,7 @@ public class GameTest {
         InputStream in = new ByteArrayInputStream(gameInputs.getBytes());
         System.setIn(in);
 
-        Main.main(new String[] {});
+        Main.main(new String[]{});
 
         String gameOutput = outContent.toString();
 
@@ -39,12 +39,12 @@ public class GameTest {
     }
 
     @Test
-    public void testDrawStateEndsInDraw() throws IOException{
+    public void testDrawStateEndsInDraw() throws IOException {
         String gameInputs = "1\n1\n1\n5\n2\n3\n7\n4\n6\n9\n8";
         InputStream in = new ByteArrayInputStream(gameInputs.getBytes());
         System.setIn(in);
 
-        Main.main(new String[] {});
+        Main.main(new String[]{});
 
         String gameOutput = outContent.toString();
 
@@ -59,7 +59,7 @@ public class GameTest {
         InputStream in = new ByteArrayInputStream(gameInputs.getBytes());
         System.setIn(in);
 
-        Main.main(new String[] {});
+        Main.main(new String[]{});
 
         String gameOutput = outContent.toString();
 

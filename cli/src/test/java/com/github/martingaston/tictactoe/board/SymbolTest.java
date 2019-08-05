@@ -1,9 +1,9 @@
 package com.github.martingaston.tictactoe.board;
 
-import com.github.martingaston.tictactoe.board.Symbol;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class SymbolTest {
     @Test
