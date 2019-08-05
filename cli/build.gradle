@@ -1,13 +1,21 @@
 plugins {
-    id 'java'
+    id "java"
+    id "application"
+    id "idea"
 }
 
-version '1.0-SNAPSHOT'
+mainClassName = "com.github.martingaston.tictactoe.Main"
 
-sourceCompatibility = 1.12
+sourceCompatibility = "11"
+targetCompatibility = "11"
+version = "1.0-SNAPSHOT"
 
 repositories {
-    mavenCentral()
+    jcenter()
+}
+
+run {
+    standardInput = System.in
 }
 
 dependencies {
