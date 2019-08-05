@@ -1,6 +1,7 @@
 package com.github.martingaston.tictactoe.api;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.github.martingaston.tictactoe.board.Symbol;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ public class EncodeTest {
    public void encodesGameJsonObject() throws JsonProcessingException {
        GameJSON gameJson = new GameJSON.Builder()
                .mode("ai")
-               .currentPlayer("O")
+               .currentPlayer(new Symbol("O"))
                .isActive(false)
                .board(new ArrayList<>(Arrays.asList("X", "O", "X", null, null, null, null, null, null)))
                .messages(new HashMap<>())

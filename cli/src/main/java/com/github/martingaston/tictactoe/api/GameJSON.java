@@ -2,6 +2,7 @@ package com.github.martingaston.tictactoe.api;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.martingaston.tictactoe.board.Symbol;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,7 +37,7 @@ public class GameJSON {
 
     public static class Builder {
         private String mode;
-        private String currentPlayer;
+        private Symbol currentPlayer;
         private boolean isActive;
         private List<String> board;
         private Map<String, String> messages;
@@ -47,8 +48,8 @@ public class GameJSON {
             return this;
         }
 
-        public Builder currentPlayer(String currentPlayer) {
-            this.currentPlayer = currentPlayer;
+        public Builder currentPlayer(Symbol playerSymbol) {
+            this.currentPlayer = playerSymbol;
 
             return this;
         }
@@ -72,7 +73,7 @@ public class GameJSON {
         }
 
         public GameJSON build() {
-            return new GameJSON(this.mode, this.currentPlayer, this.isActive, this.board, this.messages);
+            return new GameJSON(this.mode, this.currentPlayer.toString(), this.isActive, this.board, this.messages);
         }
     }
 
