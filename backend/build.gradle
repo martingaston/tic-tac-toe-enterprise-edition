@@ -1,0 +1,64 @@
+plugins {
+  id "java"
+  id "application"
+  id "idea"
+  id "jacoco"
+}
+
+mainClassName = "com.github.martingaston.application.App"
+
+sourceCompatibility = "11"
+targetCompatibility = "11"
+version = "0.1"
+
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  testImplementation group: "org.assertj", name: "assertj-core", version: "3.12.2"
+
+  def junit4Version   = "4.12"
+  def junitBomVersion = "5.5.0"
+
+  testImplementation(platform("org.junit:junit-bom:$junitBomVersion"))
+
+  // JUnit Jupiter API and TestEngine implementation
+  testImplementation("org.junit.jupiter:junit-jupiter")
+
+  testImplementation("junit:junit:${junit4Version}")
+  testRuntimeOnly("org.junit.vintage:junit-vintage-engine") {
+    because "allows JUnit 3 and JUnit 4 tests to run"
+  }
+}
+
+jar {
+  archiveFileName = "${archiveBaseName.get()}.${archiveExtension.get()}"
+  manifest {
+    attributes(
+    "Main-Class": mainClassName,
+    "Implementation-Version": version
+    )
+  }
+  doFirst {
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+  }
+}
+
+test {
+	useJUnitPlatform()
+	testLogging {
+    events "passed", "skipped", "failed"
+    exceptionFormat "full"
+	}
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
+}
+
+check.dependsOn jacocoTestReport

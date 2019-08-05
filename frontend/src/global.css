@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+
+:root {
+    --black: hsl(120, 100%, 0%);
+    --white: hsl(15, 50%, 98%);
+    --grey: hsl(340, 1, 94);
+    --shadow: #ced3dc;
+    --player-one:hsl(172, 43%, 76%); 
+    --player-two: hsl(354, 71%, 55%);
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    color: var(--black);
+    background-color: var(--grey);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.15;
+}
+
+a {
+    cursor: pointer;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 600px;
+    align-items: center;
+    justify-content: center;
+    border: 0.5rem solid var(--black);
+    box-shadow: 1rem 1rem var(--shadow);
+    margin: 1.5rem;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    border: 0.5rem solid var(--black);
+    border-width: 0.5rem 0;
+}
+
+.available {
+    cursor: pointer;
+}
+
+.player-X {
+    color: var(--player-one)
+}
+
+.player-O {
+    color: var(--player-two)
+}
+
+.square {
+    font-family: Anton, sans-serif;
+    font-size: 6rem;
+    font-weight: 900;
+    background-color: var(--white);
+    border: 0.5rem solid var(--black);
+    border-width: 0 0.5rem;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
