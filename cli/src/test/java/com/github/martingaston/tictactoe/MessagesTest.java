@@ -1,4 +1,5 @@
-import com.github.martingaston.tictactoe.Messages;
+package com.github.martingaston.tictactoe;
+
 import com.github.martingaston.tictactoe.board.Board;
 import com.github.martingaston.tictactoe.player.Player;
 import com.github.martingaston.tictactoe.player.PlayerHuman;

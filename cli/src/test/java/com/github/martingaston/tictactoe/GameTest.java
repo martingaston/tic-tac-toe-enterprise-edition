@@ -1,4 +1,5 @@
-import com.github.martingaston.tictactoe.Main;
+package com.github.martingaston.tictactoe;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

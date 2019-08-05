@@ -1,4 +1,5 @@
-import com.github.martingaston.tictactoe.Minimax;
+package com.github.martingaston.tictactoe;
+
 import com.github.martingaston.tictactoe.board.Board;
 import com.github.martingaston.tictactoe.board.Symbol;
 import org.junit.Before;
