@@ -1,6 +1,5 @@
 package com.github.martingaston.tictactoe;
 
-import com.github.martingaston.tictactoe.board.Board;
 import com.github.martingaston.tictactoe.player.Player;
 import com.github.martingaston.tictactoe.player.PlayerHuman;
 import org.junit.Before;
@@ -17,7 +16,6 @@ public class MessagesTest {
 
     @Before
     public void setUp() {
-        Board board = new Board();
         player = new PlayerHuman("X");
     }
 
