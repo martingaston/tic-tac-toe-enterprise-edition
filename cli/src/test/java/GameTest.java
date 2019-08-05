@@ -1,3 +1,4 @@
+import com.github.martingaston.tictactoe.Main;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

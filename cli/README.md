@@ -29,11 +29,11 @@ Compiling from sources requires an installation of the JDK - my personal prefere
 - Pass arguments to CLI
 - Add E2E tests
 - Save/Resume Functionality
-- Add Minimax CPU v Minimax CPU option
+- Add com.github.martingaston.tictactoe.Minimax CPU v com.github.martingaston.tictactoe.Minimax CPU option
 
 ## Sprint 4 (29/04-03/05)
 
-- ✅ Fix Messages class to display proper input information on 3X3 and 4X4 grids
+- ✅ Fix com.github.martingaston.tictactoe.Messages class to display proper input information on 3X3 and 4X4 grids
 - ✅ Refactor functions that require specific order
 - ✅ Add unbeatable computer
 - ❌Pass arguments to CLI
@@ -58,6 +58,6 @@ Compiling from sources requires an installation of the JDK - my personal prefere
 
 - ✅ Simple instructions for the user should be provided within the application itself
 - ✅ The game is played on a standard 3 X 3 board
-- ✅ Players are represented by "X" and "O" markers
+- ✅ com.github.martingaston.tictactoe.Playerser.Players are represented by "X" and "O" markers
 - ✅ Won or tied games should be identified and game should end
 

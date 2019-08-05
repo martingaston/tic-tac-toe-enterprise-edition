@@ -1,3 +1,7 @@
+import com.github.martingaston.tictactoe.Messages;
+import com.github.martingaston.tictactoe.board.Board;
+import com.github.martingaston.tictactoe.player.Player;
+import com.github.martingaston.tictactoe.player.PlayerHuman;
 import org.junit.Before;
 import org.junit.Test;
 
