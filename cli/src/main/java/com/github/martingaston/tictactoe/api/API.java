@@ -1,14 +1,14 @@
 package com.github.martingaston.tictactoe.api;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.martingaston.tictactoe.Messages;
+import com.github.martingaston.tictactoe.board.Symbol;
 
 import java.util.*;
 
 public class API {
-    public String init() {
-        boolean isActive = true;
-
-        List<String> Board = new ArrayList<>(Arrays.asList(null, null, null, null, null, null, null, null, null));
+    public static String init() {
+        List<String> board = new ArrayList<>(Arrays.asList(null, null, null, null, null, null, null, null, null));
 
         Map<String, String> messages = new HashMap<>();
         messages.put("title", "TIC TAC TOE");
@@ -16,8 +16,21 @@ public class API {
         messages.put("instructions", Messages.getInstructions(3));
         messages.put("turn", "Player X's turn");
 
-        String currentPlayer = "X";
+        Symbol currentPlayer = new Symbol("X");
+        String mode = "ai";
 
-        return "X";
+        var gameJson = new GameJSON.Builder()
+                .isActive(true)
+                .board(board)
+                .messages(messages)
+                .currentPlayer(currentPlayer)
+                .mode(mode)
+                .build();
+
+        try {
+            return Encode.from(gameJson);
+        } catch (JsonProcessingException error) {
+            return "{}";
+        }
     }
 }
