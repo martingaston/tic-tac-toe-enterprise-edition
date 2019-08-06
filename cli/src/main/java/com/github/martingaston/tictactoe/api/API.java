@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.martingaston.tictactoe.Messages;
 import com.github.martingaston.tictactoe.board.Symbol;
 
+import java.io.IOException;
 import java.util.*;
 
 public class API {
@@ -32,5 +33,11 @@ public class API {
         } catch (JsonProcessingException error) {
             return "{}";
         }
+    }
+
+    public static String update(int position, String jsonString) throws IOException {
+        GameJSON previousGame = Decode.from(jsonString);
+        GameJSON updated = Update.from(position, previousGame);
+        return Encode.from(updated);
     }
 }
