@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class GameJSON {
     private final String mode;
-    private final String currentPlayer;
+    private final Symbol currentPlayer;
     private boolean isActive;
     private List<String> board;
     private Map<String, String> messages;
@@ -24,10 +24,10 @@ public class GameJSON {
             @JsonProperty("board") ArrayList<String> board,
             @JsonProperty("messages") HashMap<String, String> messages
     ) {
-        return new GameJSON(mode, currentPlayer, isActive, board, messages);
+        return new GameJSON(mode, new Symbol(currentPlayer), isActive, board, messages);
     }
 
-    private GameJSON(String mode, String currentPlayer, boolean isActive, List<String> board, Map<String, String> messages) {
+    private GameJSON(String mode, Symbol currentPlayer, boolean isActive, List<String> board, Map<String, String> messages) {
         this.mode = mode;
         this.currentPlayer = currentPlayer;
         this.isActive = isActive;
@@ -73,7 +73,7 @@ public class GameJSON {
         }
 
         public GameJSON build() {
-            return new GameJSON(this.mode, this.currentPlayer.toString(), this.isActive, this.board, this.messages);
+            return new GameJSON(this.mode, this.currentPlayer, this.isActive, this.board, this.messages);
         }
     }
 
@@ -88,7 +88,11 @@ public class GameJSON {
     }
 
     @JsonProperty("currentPlayer")
-    public String currentPlayer() {
+    private String currentPlayerString() {
+        return this.currentPlayer.toString();
+    }
+
+    public Symbol currentPlayer() {
         return this.currentPlayer;
     }
 
