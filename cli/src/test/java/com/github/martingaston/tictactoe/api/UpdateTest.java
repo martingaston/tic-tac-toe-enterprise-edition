@@ -46,5 +46,6 @@ public class UpdateTest {
 
         assertTrue(moveFour.isActive());
         assertFalse(moveFive.isActive());
+        assertEquals("Player X wins!", moveFive.messages().get("ending"));
     }
 }
