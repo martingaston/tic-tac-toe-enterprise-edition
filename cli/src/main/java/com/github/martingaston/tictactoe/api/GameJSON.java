@@ -17,7 +17,7 @@ public class GameJSON {
     private Map<String, String> messages;
 
     @JsonCreator
-    public static GameJSON from(
+    private static GameJSON from(
             @JsonProperty("mode") String mode,
             @JsonProperty("currentPlayer") String currentPlayer,
             @JsonProperty("isActive") boolean isActive,
