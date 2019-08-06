@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
@@ -47,5 +48,16 @@ public class UpdateTest {
         assertTrue(moveFour.isActive());
         assertFalse(moveFive.isActive());
         assertEquals("Player X wins!", moveFive.messages().get("ending"));
+    }
+
+    @Test
+    public void aiModeTakesNoughtTurns() throws IOException {
+        GameJSON initialGame = Decode.from(API.init("ai"));
+
+        GameJSON moveOne = Update.from(1, initialGame);
+        int movesPlayed = (int) moveOne.board().stream().filter(Objects::nonNull).count();
+
+        assertEquals(moveOne.currentPlayer(), new Symbol("X"));
+        assertEquals(2, movesPlayed);
     }
 }
