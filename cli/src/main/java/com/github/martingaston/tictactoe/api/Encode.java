@@ -9,5 +9,7 @@ public class Encode {
         mapper.configure(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY, true);
         return mapper.writeValueAsString(gameJson);
     }
+
+
 }
 
