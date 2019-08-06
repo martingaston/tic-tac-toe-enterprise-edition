@@ -15,7 +15,7 @@ import static org.junit.Assert.assertFalse;
 public class UpdateTest {
     @Test
     public void canAddMoveToBoard() throws IOException {
-        GameJSON game = Decode.from(API.init());
+        GameJSON game = Decode.from(API.init("human"));
         int movePosition = 1;
         List<String> expectedBoard = new ArrayList<>(Arrays.asList("X", null, null, null, null, null, null, null, null));
 
@@ -26,7 +26,7 @@ public class UpdateTest {
 
     @Test
     public void willSwapCurrentPlayer() throws IOException {
-        GameJSON game = Decode.from(API.init());
+        GameJSON game = Decode.from(API.init("human"));
         int movePosition = 1;
 
         GameJSON updatedGame = Update.from(movePosition, game);
@@ -36,7 +36,7 @@ public class UpdateTest {
 
     @Test
     public void isActiveIsFalseWhenGameIsOver() throws IOException {
-        GameJSON initialGame = Decode.from(API.init());
+        GameJSON initialGame = Decode.from(API.init("human"));
 
         GameJSON moveOne = Update.from(1, initialGame);
         GameJSON moveTwo = Update.from(4, moveOne);

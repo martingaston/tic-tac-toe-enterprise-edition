@@ -16,11 +16,11 @@ public class Update {
        Board nextBoard = PopulatedBoard.from(previousMove.board(), new Symbol("X"), new Symbol("O"));
        nextBoard.add(oneIndexedToZeroIndexed(position), previousMove.currentPlayer());
 
-       if (nextBoard.isGameOver()) {
+       if (gameIsOver(nextBoard)) {
            return gameOver(nextBoard, previousMove.currentPlayer());
        }
 
-       if (nextPlayerIsNought(previousMove.currentPlayer())) {
+       if (aiShouldMakeMove(previousMove)) {
            int cpuMove = new Minimax(nextBoard, new Symbol("O"), new Symbol("X")).optimal();
            return Update.from(cpuMove, updatedGameJson(previousMove, nextBoard));
        }
@@ -38,12 +38,20 @@ public class Update {
 
     private static GameJSON updatedGameJson(GameJSON previousMove, Board nextBoard) {
         return new GameJSON.Builder()
-                .isActive(!nextBoard.isGameOver())
+                .isActive(gameIsActive(nextBoard))
                 .board(formatBoard(nextBoard))
                 .currentPlayer(swapPlayer(previousMove.currentPlayer()))
                 .messages(previousMove.messages())
                 .mode(previousMove.mode())
                 .build();
+    }
+
+    private static boolean gameIsActive(Board board) {
+        return !gameIsOver(board);
+    }
+
+    private static boolean gameIsOver(Board board) {
+        return board.isGameOver();
     }
 
     private static GameJSON gameOver(Board board, Symbol currentPlayer) {
@@ -56,6 +64,10 @@ public class Update {
 
     private static Symbol swapPlayer(Symbol currentPlayer) {
         return currentPlayer.equals(new Symbol("X")) ? new Symbol("O") : new Symbol("X");
+    }
+
+    private static boolean aiShouldMakeMove(GameJSON previousMove) {
+        return previousMove.mode().equals("ai") && nextPlayerIsNought(previousMove.currentPlayer());
     }
 
     private static boolean nextPlayerIsNought(Symbol currentPlayer) {

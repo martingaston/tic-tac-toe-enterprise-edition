@@ -9,6 +9,10 @@ import java.util.*;
 
 public class API {
     public static String init() {
+        return API.init("ai");
+    }
+
+    public static String init(String mode) {
         List<String> board = new ArrayList<>(Arrays.asList(null, null, null, null, null, null, null, null, null));
 
         Map<String, String> messages = new HashMap<>();
@@ -18,7 +22,6 @@ public class API {
         messages.put("turn", "Player X's turn");
 
         Symbol currentPlayer = new Symbol("X");
-        String mode = "ai";
 
         var gameJson = new GameJSON.Builder()
                 .isActive(true)
