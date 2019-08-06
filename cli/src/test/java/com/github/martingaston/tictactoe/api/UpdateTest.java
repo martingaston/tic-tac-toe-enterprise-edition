@@ -51,6 +51,19 @@ public class UpdateTest {
     }
 
     @Test
+    public void aDrawReturnsADrawMessage() throws IOException {
+        GameJSON game = Decode.from(API.init("human"));
+        List<Integer> movesList = new ArrayList<>(Arrays.asList(1, 5, 2, 3, 7, 4, 8, 9, 6));
+
+        for (Integer movePosition : movesList) {
+            game = Update.from(movePosition, game);
+        }
+
+        assertFalse(game.isActive());
+        assertEquals("Bad luck! It's a draw!", game.messages().get("ending"));
+    }
+
+    @Test
     public void aiModeTakesNoughtTurns() throws IOException {
         GameJSON initialGame = Decode.from(API.init("ai"));
 

@@ -14,7 +14,7 @@ public class Update {
            return gameOver(nextBoard, previousMove.currentPlayer());
        }
 
-       if (aiShouldMakeMove(previousMove)) {
+       if (Referee.aiShouldMakeMove(previousMove)) {
            int cpuMove = new Minimax(nextBoard, new Symbol("O"), new Symbol("X")).optimal();
            return Update.from(cpuMove, updatedGameJson(previousMove, nextBoard));
        }
@@ -29,10 +29,6 @@ public class Update {
     private static GameJSON gameOver(Board board, Symbol currentPlayer) {
         return Response.gameOver(board, currentPlayer);
 
-    }
-
-    private static boolean aiShouldMakeMove(GameJSON previousMove) {
-        return previousMove.mode().equals("ai") && Referee.nextPlayerIsNought(previousMove.currentPlayer());
     }
 
     private static int oneIndexedToZeroIndexed(int i) {

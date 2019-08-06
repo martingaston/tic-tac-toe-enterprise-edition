@@ -14,7 +14,11 @@ class Referee {
         return currentPlayer.equals(new Symbol("X")) ? new Symbol("O") : new Symbol("X");
     }
 
-    static boolean nextPlayerIsNought(Symbol currentPlayer) {
+    static boolean aiShouldMakeMove(GameJSON previousMove) {
+        return previousMove.mode().equals("ai") && Referee.nextPlayerIsNought(previousMove.currentPlayer());
+    }
+
+    private static boolean nextPlayerIsNought(Symbol currentPlayer) {
         return Referee.swapPlayer(currentPlayer).equals(new Symbol("O"));
     }
 
