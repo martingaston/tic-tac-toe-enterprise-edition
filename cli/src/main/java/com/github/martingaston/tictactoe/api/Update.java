@@ -5,7 +5,7 @@ import com.github.martingaston.tictactoe.board.Board;
 import com.github.martingaston.tictactoe.board.PopulatedBoard;
 import com.github.martingaston.tictactoe.board.Symbol;
 
-public class Update {
+class Update {
     static GameJSON from(int position, GameJSON previousMove) {
        Board nextBoard = PopulatedBoard.from(previousMove.board(), new Symbol("X"), new Symbol("O"));
        nextBoard.add(oneIndexedToZeroIndexed(position), previousMove.currentPlayer());

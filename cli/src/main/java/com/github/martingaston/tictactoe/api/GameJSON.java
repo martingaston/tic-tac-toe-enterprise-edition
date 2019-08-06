@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class GameJSON {
+class GameJSON {
     private final String mode;
     private final Symbol currentPlayer;
     private boolean isActive;
