@@ -10,16 +10,16 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 class Referee {
-    static Symbol swapPlayer(Symbol currentPlayer) {
-        return currentPlayer.equals(new Symbol("X")) ? new Symbol("O") : new Symbol("X");
+    static Symbol swapPlayer(JsonIncoming previousMove) {
+        if(previousMove.mode().equals("ai")) {
+            return new Symbol("X");
+        }
+
+        return previousMove.currentPlayer().equals(new Symbol("X")) ? new Symbol("O") : new Symbol("X");
     }
 
-    static boolean aiShouldMakeMove(Json previousMove) {
-        return previousMove.mode().equals("ai") && Referee.nextPlayerIsNought(previousMove.currentPlayer());
-    }
-
-    private static boolean nextPlayerIsNought(Symbol currentPlayer) {
-        return Referee.swapPlayer(currentPlayer).equals(new Symbol("O"));
+    static boolean aiShouldMakeMove(JsonIncoming previousMove) {
+        return previousMove.mode().equals("ai");
     }
 
     static List<String> formatBoard(Board nextBoard) {

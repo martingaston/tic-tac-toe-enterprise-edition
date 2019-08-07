@@ -4,73 +4,94 @@ import com.github.martingaston.tictactoe.board.Symbol;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
-import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 public class UpdateTest {
     @Test
-    public void canAddMoveToBoard() throws IOException {
-        JsonIncoming game = Decode.from(API.init("human"));
-        int movePosition = 1;
+    public void canAddMoveToBoard() {
+        var jsonInput = new JsonIncoming.Builder()
+                .position(1)
+                .board(new ArrayList<>(Arrays.asList(null, null, null, null, null, null, null, null, null)))
+                .currentPlayer(new Symbol("X"))
+                .isActive(true)
+                .messages(new HashMap<>())
+                .mode("human")
+                .build();
         List<String> expectedBoard = new ArrayList<>(Arrays.asList("X", null, null, null, null, null, null, null, null));
 
-        JsonOutgoing updatedGame = Update.from(movePosition, game);
+        JsonOutgoing updatedGame = Update.from(jsonInput);
 
         assertEquals(expectedBoard, updatedGame.board());
     }
 
     @Test
-    public void willSwapCurrentPlayer() throws IOException {
-        JsonIncoming game = Decode.from(API.init("human"));
-        int movePosition = 1;
+    public void willSwapCurrentPlayer() {
+        var jsonInput = new JsonIncoming.Builder()
+                .position(1)
+                .board(new ArrayList<>(Arrays.asList(null, null, null, null, null, null, null, null, null)))
+                .currentPlayer(new Symbol("X"))
+                .isActive(true)
+                .messages(new HashMap<>())
+                .mode("human")
+                .build();
 
-        JsonOutgoing updatedGame = Update.from(movePosition, game);
+        JsonOutgoing updatedGame = Update.from(jsonInput);
 
         assertEquals(new Symbol("O"), updatedGame.currentPlayer());
     }
 
     @Test
     public void isActiveIsFalseWhenGameIsOver() throws IOException {
-        JsonIncoming initialGame = Decode.from(API.init("human"));
+        var jsonInput = new JsonIncoming.Builder()
+                .position(3)
+                .board(new ArrayList<>(Arrays.asList("X", "X", null, "O", "O", null, null, null, null)))
+                .currentPlayer(new Symbol("X"))
+                .isActive(true)
+                .messages(new HashMap<>())
+                .mode("human")
+                .build();
 
-        JsonOutgoing moveOne = Update.from(1, initialGame);
-        JsonOutgoing moveTwo = Update.from(4, moveOne);
-        JsonOutgoing moveThree = Update.from(2, moveTwo);
-        JsonOutgoing moveFour = Update.from(5, moveThree);
-        JsonOutgoing moveFive = Update.from(3, moveFour);
+        JsonOutgoing playedTurn = Update.from(jsonInput);
 
-        assertTrue(moveFour.isActive());
-        assertFalse(moveFive.isActive());
-        assertEquals("Player X wins!", moveFive.messages().get("ending"));
+        assertFalse(playedTurn.isActive());
+        assertEquals("Player X wins!", playedTurn.messages().get("ending"));
     }
 
     @Test
-    public void aDrawReturnsADrawMessage() throws IOException {
-        Json game = Decode.from(API.init("human"));
-        List<Integer> movesList = new ArrayList<>(Arrays.asList(1, 5, 2, 3, 7, 4, 8, 9, 6));
+    public void aDrawReturnsADrawMessage() {
+        var jsonInput = new JsonIncoming.Builder()
+                .position(6)
+                .board(new ArrayList<>(Arrays.asList("X", "X", "O", "O", "O", null, "X", "X", "O")))
+                .currentPlayer(new Symbol("X"))
+                .isActive(true)
+                .messages(new HashMap<>())
+                .mode("human")
+                .build();
 
-        for (Integer movePosition : movesList) {
-            game = Update.from(movePosition, game);
-        }
+        JsonOutgoing playedTurn = Update.from(jsonInput);
 
-        assertFalse(game.isActive());
-        assertEquals("Bad luck! It's a draw!", game.messages().get("ending"));
+        assertFalse(playedTurn.isActive());
+        assertEquals("Bad luck! It's a draw!", playedTurn.messages().get("ending"));
     }
 
     @Test
-    public void aiModeTakesNoughtTurns() throws IOException {
-        JsonIncoming initialGame = Decode.from(API.init("ai"));
+    public void aiModeTakesNoughtTurns() {
+        var jsonInput = new JsonIncoming.Builder()
+                .position(1)
+                .board(new ArrayList<>(Arrays.asList(null, null, null, null, null, null, null, null, null)))
+                .currentPlayer(new Symbol("X"))
+                .isActive(true)
+                .messages(new HashMap<>())
+                .mode("ai")
+                .build();
 
-        JsonOutgoing moveOne = Update.from(1, initialGame);
-        int movesPlayed = (int) moveOne.board().stream().filter(Objects::nonNull).count();
+        JsonOutgoing playedTurn = Update.from(jsonInput);
+        int movesPlayed = (int) playedTurn.board().stream().filter(Objects::nonNull).count();
 
-        assertEquals(moveOne.currentPlayer(), new Symbol("X"));
+        assertEquals(playedTurn.currentPlayer(), new Symbol("X"));
         assertEquals(2, movesPlayed);
     }
 }

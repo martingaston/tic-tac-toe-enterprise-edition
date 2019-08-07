@@ -27,11 +27,14 @@ class Response {
                 .build();
     }
 
-    static JsonOutgoing updatedMove(Json previousMove, Board nextBoard) {
+    static JsonOutgoing updatedMove(JsonIncoming previousMove, Board nextBoard) {
+        var nextPlayer = Referee.swapPlayer(previousMove);
+        previousMove.messages().put("turn", String.format("Player %s's turn", nextPlayer.toString()));
+
         return new JsonOutgoing.Builder()
                 .isActive(Referee.gameIsActive(nextBoard))
                 .board(Referee.formatBoard(nextBoard))
-                .currentPlayer(Referee.swapPlayer(previousMove.currentPlayer()))
+                .currentPlayer(nextPlayer)
                 .messages(previousMove.messages())
                 .mode(previousMove.mode())
                 .build();

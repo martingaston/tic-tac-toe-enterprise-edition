@@ -13,9 +13,9 @@ class JsonIncoming implements Json {
     private final int position;
     private final String mode;
     private final Symbol currentPlayer;
-    private boolean isActive;
-    private List<String> board;
-    private Map<String, String> messages;
+    private final boolean isActive;
+    private final List<String> board;
+    private final Map<String, String> messages;
 
     @JsonCreator
     private static JsonIncoming from(
@@ -36,6 +36,55 @@ class JsonIncoming implements Json {
         this.isActive = isActive;
         this.board = board;
         this.messages = messages;
+    }
+
+    public static class Builder {
+        private int position;
+        private String mode;
+        private Symbol currentPlayer;
+        private boolean isActive;
+        private List<String> board;
+        private Map<String, String> messages;
+
+        public Builder position(int position) {
+            this.position = position;
+
+            return this;
+        }
+
+        public Builder mode(String mode) {
+            this.mode = mode;
+
+            return this;
+        }
+
+        public Builder currentPlayer(Symbol playerSymbol) {
+            this.currentPlayer = playerSymbol;
+
+            return this;
+        }
+
+        public Builder isActive(boolean isActive) {
+            this.isActive = isActive;
+
+            return this;
+        }
+
+        public Builder board(List<String> board) {
+            this.board = board;
+
+            return this;
+        }
+
+        public Builder messages(Map<String, String> messages) {
+            this.messages = messages;
+
+            return this;
+        }
+
+        public JsonIncoming build() {
+            return new JsonIncoming(this.position, this.mode, this.currentPlayer, this.isActive, this.board, this.messages);
+        }
     }
 
     @JsonProperty("position")

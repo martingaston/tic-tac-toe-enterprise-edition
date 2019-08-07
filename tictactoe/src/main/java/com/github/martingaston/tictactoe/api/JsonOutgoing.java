@@ -12,9 +12,9 @@ import java.util.Map;
 class JsonOutgoing implements Json {
     private final String mode;
     private final Symbol currentPlayer;
-    private boolean isActive;
-    private List<String> board;
-    private Map<String, String> messages;
+    private final boolean isActive;
+    private final List<String> board;
+    private final Map<String, String> messages;
 
     @JsonCreator
     private static JsonOutgoing from(
