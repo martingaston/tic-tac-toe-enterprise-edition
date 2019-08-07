@@ -1,5 +1,3 @@
-package com.github.martingaston.tictactoe.api;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 

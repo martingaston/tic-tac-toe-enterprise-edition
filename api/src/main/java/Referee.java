@@ -1,5 +1,3 @@
-package com.github.martingaston.tictactoe.api;
-
 import com.github.martingaston.tictactoe.Messages;
 import com.github.martingaston.tictactoe.board.Board;
 import com.github.martingaston.tictactoe.board.Symbol;

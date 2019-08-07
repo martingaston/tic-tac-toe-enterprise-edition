@@ -1,5 +1,3 @@
-package com.github.martingaston.tictactoe.api;
-
 import java.io.IOException;
 
 public class API {
