@@ -1,5 +1,6 @@
 package com.github.martingaston.tictactoe.api;
 
+import com.github.martingaston.tictactoe.board.Symbol;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -31,7 +32,7 @@ public class DecodeTest {
     public void hasCurrentPlayer() throws IOException {
         var decoder = Decode.from(game);
 
-        assertEquals("X", decoder.currentPlayer());
+        assertEquals(new Symbol("X"), decoder.currentPlayer());
     }
 
     @Test

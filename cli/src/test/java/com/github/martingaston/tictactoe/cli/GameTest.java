@@ -1,5 +1,6 @@
-package com.github.martingaston.tictactoe;
+package com.github.martingaston.tictactoe.cli;
 
+import com.github.martingaston.tictactoe.Main;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,7 +1,7 @@
-package com.github.martingaston.tictactoe;
+package com.github.martingaston.tictactoe.cli;
 
+import com.github.martingaston.tictactoe.Messages;
 import com.github.martingaston.tictactoe.board.Board;
-import com.github.martingaston.tictactoe.cli.Display;
 import com.github.martingaston.tictactoe.player.Player;
 import com.github.martingaston.tictactoe.player.Players;
 import com.github.martingaston.tictactoe.state.State;
@@ -9,11 +9,11 @@ import com.github.martingaston.tictactoe.storage.Storage;
 
 import java.io.IOException;
 
-class Game {
+public class Game {
     private static Board board;
     private static Players players;
 
-    static void play(State state, Storage storage) throws IOException {
+    public static void play(State state, Storage storage) throws IOException {
         board = state.board();
         players = state.players();
 

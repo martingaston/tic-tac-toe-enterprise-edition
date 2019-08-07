@@ -1,5 +1,6 @@
 package com.github.martingaston.tictactoe;
 
+import com.github.martingaston.tictactoe.cli.Game;
 import com.github.martingaston.tictactoe.cli.IO;
 import com.github.martingaston.tictactoe.state.State;
 import com.github.martingaston.tictactoe.state.StateCLI;
