@@ -9,4 +9,5 @@
 
 rootProject.name = 'tic-tac-toe-fullstack'
 include 'tictactoe'
+include 'cli'
 include 'backend'

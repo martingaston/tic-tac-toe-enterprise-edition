@@ -1,0 +1,14 @@
+mainClassName = "com.github.martingaston.cli.Main"
+
+sourceCompatibility = "11"
+targetCompatibility = "11"
+version = "1.0-SNAPSHOT"
+
+run {
+    standardInput = System.in
+}
+
+dependencies {
+  compile project(':tictactoe')
+  testCompile group: 'junit', name: 'junit', version: '4.12'
+}
