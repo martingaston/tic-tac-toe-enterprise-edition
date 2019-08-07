@@ -11,26 +11,11 @@ sourceCompatibility = "11"
 targetCompatibility = "11"
 version = "0.1"
 
-
-repositories {
-  jcenter()
-}
-
 dependencies {
+  compile project(':cli')
+
   testImplementation group: "org.assertj", name: "assertj-core", version: "3.12.2"
-
-  def junit4Version   = "4.12"
-  def junitBomVersion = "5.5.0"
-
-  testImplementation(platform("org.junit:junit-bom:$junitBomVersion"))
-
-  // JUnit Jupiter API and TestEngine implementation
-  testImplementation("org.junit.jupiter:junit-jupiter")
-
-  testImplementation("junit:junit:${junit4Version}")
-  testRuntimeOnly("org.junit.vintage:junit-vintage-engine") {
-    because "allows JUnit 3 and JUnit 4 tests to run"
-  }
+  testImplementation('org.junit.jupiter:junit-jupiter:5.5.1')
 }
 
 jar {
