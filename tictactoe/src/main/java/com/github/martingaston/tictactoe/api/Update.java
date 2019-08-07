@@ -6,28 +6,33 @@ import com.github.martingaston.tictactoe.board.PopulatedBoard;
 import com.github.martingaston.tictactoe.board.Symbol;
 
 class Update {
-    static GameJSON from(int position, GameJSON previousMove) {
-       Board nextBoard = PopulatedBoard.from(previousMove.board(), new Symbol("X"), new Symbol("O"));
-       nextBoard.add(oneIndexedToZeroIndexed(position), previousMove.currentPlayer());
+    static JsonOutgoing from(JsonIncoming currentGame) {
+       Board board = PopulatedBoard.from(currentGame.board(), new Symbol("X"), new Symbol("O"));
+       board.add(oneIndexedToZeroIndexed(currentGame.position()), currentGame.currentPlayer());
 
-       if (nextBoard.isGameOver()) {
-           return gameOver(nextBoard, previousMove.currentPlayer());
+       if (board.isGameOver()) {
+           return gameOver(board, currentGame.currentPlayer());
        }
 
-       if (Referee.aiShouldMakeMove(previousMove)) {
-           int cpuMove = new Minimax(nextBoard, new Symbol("O"), new Symbol("X")).optimal();
-           return Update.from(cpuMove, updatedGameJson(previousMove, nextBoard));
+       if (Referee.aiShouldMakeMove(currentGame)) {
+           makeAiMove(board);
        }
 
-       return updatedGameJson(previousMove, nextBoard);
+       return updateGame(currentGame, board);
     }
 
-    private static GameJSON updatedGameJson(GameJSON previousMove, Board nextBoard) {
-        return Response.updatedMove(previousMove, nextBoard);
+    private static void makeAiMove(Board board) {
+        var aiSymbol = new Symbol("O");
+        int cpuMove = new Minimax(board, aiSymbol, new Symbol("X")).optimal();
+        board.add(cpuMove, aiSymbol);
     }
 
-    private static GameJSON gameOver(Board board, Symbol currentPlayer) {
-        return Response.gameOver(board, currentPlayer);
+    private static JsonOutgoing updateGame(JsonIncoming currentGame, Board updatedBoard) {
+        return Responses.updatedMove(currentGame, updatedBoard);
+    }
+
+    private static JsonOutgoing gameOver(Board finalBoard, Symbol finalPlayer) {
+        return Responses.gameOver(finalBoard, finalPlayer);
 
     }
 

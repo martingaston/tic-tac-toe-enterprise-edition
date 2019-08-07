@@ -4,8 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 
 class Decode {
-    static GameJSON from(String game) throws IOException {
+    static JsonIncoming from(String game) throws IOException {
         var objectMapper = new ObjectMapper();
-        return objectMapper.readValue(game, GameJSON.class);
+        return objectMapper.readValue(game, JsonIncoming.class);
     }
 }
