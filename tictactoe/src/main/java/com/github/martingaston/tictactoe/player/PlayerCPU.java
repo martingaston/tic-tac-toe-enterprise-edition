@@ -8,7 +8,7 @@ import java.util.List;
 public class PlayerCPU implements com.github.martingaston.tictactoe.player.Player {
     private final Symbol symbol;
 
-    PlayerCPU(String symbol) {
+    public PlayerCPU(String symbol) {
         this.symbol = new Symbol(symbol);
     }
 
