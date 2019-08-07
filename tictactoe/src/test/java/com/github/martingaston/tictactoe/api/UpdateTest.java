@@ -3,7 +3,6 @@ package com.github.martingaston.tictactoe.api;
 import com.github.martingaston.tictactoe.board.Symbol;
 import org.junit.Test;
 
-import java.io.IOException;
 import java.util.*;
 
 import static org.junit.Assert.assertEquals;
@@ -44,7 +43,7 @@ public class UpdateTest {
     }
 
     @Test
-    public void isActiveIsFalseWhenGameIsOver() throws IOException {
+    public void isActiveIsFalseWhenGameIsOver() {
         var jsonInput = new JsonIncoming.Builder()
                 .position(3)
                 .board(new ArrayList<>(Arrays.asList("X", "X", null, "O", "O", null, null, null, null)))
