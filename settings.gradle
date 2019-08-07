@@ -8,5 +8,5 @@
  */
 
 rootProject.name = 'tic-tac-toe-fullstack'
-include 'cli'
+include 'tictactoe'
 include 'backend'
