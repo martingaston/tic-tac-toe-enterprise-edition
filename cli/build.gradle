@@ -1,9 +1,3 @@
-plugins {
-    id "java"
-    id "application"
-    id "idea"
-}
-
 mainClassName = "com.github.martingaston.tictactoe.Main"
 
 sourceCompatibility = "11"
