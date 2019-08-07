@@ -1,4 +1,4 @@
-mainClassName = "com.github.martingaston.cli.Main"
+mainClassName = "com.github.martingaston.CLI"
 
 sourceCompatibility = "11"
 targetCompatibility = "11"
