@@ -2,6 +2,8 @@ package com.github.martingaston.application.http;
 
 import com.github.martingaston.application.routes.Routes;
 
+import java.io.IOException;
+
 public class Router {
     private Routes routes;
 
@@ -9,7 +11,7 @@ public class Router {
         this.routes = routes;
     }
 
-    public Response respond(Request request) {
+    public Response respond(Request request) throws IOException {
         Response.Options response = createDefaultResponse();
 
         if (invalidRequest(request)) {
@@ -36,7 +38,7 @@ public class Router {
                     .addHeader("Connection", "close");
     }
 
-    private static Response handleValidRequest(Request request, Response.Options response, Routes routes) {
+    private static Response handleValidRequest(Request request, Response.Options response, Routes routes) throws IOException {
         routes.handler(request).handle(request, response);
 
         if (headRequest(request)) {
