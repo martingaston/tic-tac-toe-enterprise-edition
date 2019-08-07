@@ -6,19 +6,19 @@ import com.github.martingaston.tictactoe.board.PopulatedBoard;
 import com.github.martingaston.tictactoe.board.Symbol;
 
 class Update {
-    static JsonOutgoing from(JsonIncoming previousMove) {
-       Board board = PopulatedBoard.from(previousMove.board(), new Symbol("X"), new Symbol("O"));
-       board.add(oneIndexedToZeroIndexed(previousMove.position()), previousMove.currentPlayer());
+    static JsonOutgoing from(JsonIncoming currentGame) {
+       Board board = PopulatedBoard.from(currentGame.board(), new Symbol("X"), new Symbol("O"));
+       board.add(oneIndexedToZeroIndexed(currentGame.position()), currentGame.currentPlayer());
 
        if (board.isGameOver()) {
-           return gameOver(board, previousMove.currentPlayer());
+           return gameOver(board, currentGame.currentPlayer());
        }
 
-       if (Referee.aiShouldMakeMove(previousMove)) {
+       if (Referee.aiShouldMakeMove(currentGame)) {
            makeAiMove(board);
        }
 
-       return updatedGameJson(previousMove, board);
+       return updateGame(currentGame, board);
     }
 
     private static void makeAiMove(Board board) {
@@ -27,12 +27,12 @@ class Update {
         board.add(cpuMove, aiSymbol);
     }
 
-    private static JsonOutgoing updatedGameJson(JsonIncoming previousMove, Board nextBoard) {
-        return Response.updatedMove(previousMove, nextBoard);
+    private static JsonOutgoing updateGame(JsonIncoming currentGame, Board updatedBoard) {
+        return Response.updatedMove(currentGame, updatedBoard);
     }
 
-    private static JsonOutgoing gameOver(Board board, Symbol currentPlayer) {
-        return Response.gameOver(board, currentPlayer);
+    private static JsonOutgoing gameOver(Board finalBoard, Symbol finalPlayer) {
+        return Response.gameOver(finalBoard, finalPlayer);
 
     }
 
