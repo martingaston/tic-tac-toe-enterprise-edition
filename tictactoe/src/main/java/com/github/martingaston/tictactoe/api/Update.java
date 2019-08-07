@@ -28,11 +28,11 @@ class Update {
     }
 
     private static JsonOutgoing updateGame(JsonIncoming currentGame, Board updatedBoard) {
-        return Response.updatedMove(currentGame, updatedBoard);
+        return Responses.updatedMove(currentGame, updatedBoard);
     }
 
     private static JsonOutgoing gameOver(Board finalBoard, Symbol finalPlayer) {
-        return Response.gameOver(finalBoard, finalPlayer);
+        return Responses.gameOver(finalBoard, finalPlayer);
 
     }
 

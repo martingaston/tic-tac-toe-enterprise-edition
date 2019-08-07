@@ -6,7 +6,7 @@ import com.github.martingaston.tictactoe.board.Symbol;
 
 import java.util.*;
 
-class Response {
+class Responses {
     static JsonOutgoing initial(String mode) {
         List<String> board = new ArrayList<>(Arrays.asList(null, null, null, null, null, null, null, null, null));
 
