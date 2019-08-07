@@ -11,8 +11,8 @@ public class API {
         return Encode.from(Response.initial(mode));
     }
 
-    public static String update(String jsonString) throws IOException {
-        JsonIncoming previousGame = Decode.from(jsonString);
+    public static String update(String json) throws IOException {
+        JsonIncoming previousGame = Decode.from(json);
         JsonOutgoing updated = Update.from(previousGame);
         return Encode.from(updated);
     }
