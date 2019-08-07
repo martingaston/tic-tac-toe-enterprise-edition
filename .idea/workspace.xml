@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2eb9a854-e754-46ff-8b2e-e9a4e7aa07ce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/API.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/JsonIncoming.java" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/JsonIncoming.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/JsonOutgoing.java" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/JsonOutgoing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Referee.java" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Referee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Response.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Update.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/src/test/java/com/github/martingaston/tictactoe/api/APITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/src/test/java/com/github/martingaston/tictactoe/api/APITest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/src/test/java/com/github/martingaston/tictactoe/api/UpdateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/src/test/java/com/github/martingaston/tictactoe/api/UpdateTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -34,55 +27,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Update.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tictactoe/src/test/java/com/github/martingaston/tictactoe/api/APITest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/JsonOutgoing.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Json.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/API.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="14" column="60" lean-forward="true" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tictactoe/src/test/java/com/github/martingaston/tictactoe/api/UpdateTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
-              <caret line="93" column="49" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
+            <state relative-caret-position="216">
+              <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -90,35 +38,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/JsonIncoming.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="988">
-              <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Referee.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+            <state relative-caret-position="2520">
+              <caret line="105" column="31" selection-start-line="105" selection-start-column="31" selection-end-line="105" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Response.java">
+        <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Update.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="547">
-              <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+            <state relative-caret-position="240">
+              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/Messages.java">
+        <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/JsonOutgoing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="648">
+              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tictactoe/src/test/java/com/github/martingaston/tictactoe/api/EncodeTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Encode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -146,12 +103,12 @@
         <option value="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Json.java" />
         <option value="$PROJECT_DIR$/tictactoe/src/test/java/com/github/martingaston/tictactoe/api/APITest.java" />
         <option value="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/API.java" />
-        <option value="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/JsonOutgoing.java" />
         <option value="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/JsonIncoming.java" />
         <option value="$PROJECT_DIR$/tictactoe/src/test/java/com/github/martingaston/tictactoe/api/UpdateTest.java" />
         <option value="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Referee.java" />
-        <option value="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Update.java" />
         <option value="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Response.java" />
+        <option value="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/JsonOutgoing.java" />
+        <option value="$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Update.java" />
       </list>
     </option>
   </component>
@@ -193,13 +150,6 @@
             <path>
               <item name="tic-tac-toe-fullstack" type="b2602c69:ProjectViewProjectNode" />
               <item name="tic-tac-toe-fullstack" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="tic-tac-toe-fullstack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tic-tac-toe-fullstack" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="tictactoe" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
@@ -275,26 +225,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="tictactoe" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tic-tac-toe-fullstack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tic-tac-toe-fullstack" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="tictactoe" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tictactoe" type="462c0819:PsiDirectoryNode" />
-              <item name="board" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tic-tac-toe-fullstack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tic-tac-toe-fullstack" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="tictactoe" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tictactoe" type="462c0819:PsiDirectoryNode" />
-              <item name="cli" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -321,16 +251,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in tictactoe_test (4)">
+  <component name="RunManager" selected="JUnit.All in tictactoe_test (1)">
     <configuration name="All in tictactoe_test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tictactoe_test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in tictactoe_test (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tictactoe_test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -362,13 +284,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.github.martingaston.tictactoe.api in tictactoe_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tictactoe_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.martingaston.tictactoe.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.martingaston.tictactoe.api" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in tictactoe_test (4)" />
-        <item itemvalue="JUnit.All in tictactoe_test (3)" />
-        <item itemvalue="JUnit.All in tictactoe_test (2)" />
         <item itemvalue="JUnit.All in tictactoe_test (1)" />
         <item itemvalue="JUnit.All in tictactoe_test" />
+        <item itemvalue="JUnit.com.github.martingaston.tictactoe.api in tictactoe_test" />
+        <item itemvalue="JUnit.All in tictactoe_test (4)" />
+        <item itemvalue="JUnit.All in tictactoe_test (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -404,21 +340,24 @@
     <history-entry file="All_in_tictactoe_test_(3) - 2019.08.07 at 15h 17m 25s.xml">
       <configuration name="All in tictactoe_test (3)" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="com_github_martingaston_tictactoe_api_in_tictactoe_test - 2019.08.07 at 16h 01m 31s.xml">
+      <configuration name="com.github.martingaston.tictactoe.api in tictactoe_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_tictactoe_test - 2019.08.07 at 16h 03m 30s.xml">
+      <configuration name="All in tictactoe_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_tictactoe_test_(1) - 2019.08.07 at 16h 04m 20s.xml">
+      <configuration name="All in tictactoe_test (1)" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1417" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980143" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Build" weight="0.32981133" />
-      <window_info anchor="bottom" id="Messages" weight="0.32981133" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32981133" />
@@ -426,47 +365,32 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Gradle" />
-      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="10" weight="0.32981133" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32981133" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32962668" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Gradle" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
     </layout>
   </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/tic_tac_toe_fullstack$com_github_martingaston_tictactoe_api_in_tictactoe_test.ic" NAME="com.github.martingaston.tictactoe.api in tictactoe_test Coverage Results" MODIFIED="1565190087273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.github.martingaston.tictactoe.api.*</FILTER>
+    </SUITE>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/IncomingJSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/json/GameJSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-658">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tictactoe/src/test/java/com/github/martingaston/tictactoe/api/EncodeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/IncomingJSON.java" />
+    <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/json/GameJSON.java" />
     <entry file="file://$PROJECT_DIR$/tictactoe/src/test/java/com/github/martingaston/tictactoe/api/DecodeTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="514">
           <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Encode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -491,27 +415,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/API.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="60" lean-forward="true" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/JsonIncoming.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
-          <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/JsonOutgoing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tictactoe/src/test/java/com/github/martingaston/tictactoe/api/UpdateTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="601">
@@ -526,13 +429,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Update.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/Messages.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -544,6 +440,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="547">
           <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/API.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Encode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tictactoe/src/test/java/com/github/martingaston/tictactoe/api/EncodeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/JsonOutgoing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/JsonIncoming.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2520">
+          <caret line="105" column="31" selection-start-line="105" selection-start-column="31" selection-end-line="105" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tictactoe/src/main/java/com/github/martingaston/tictactoe/api/Update.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
         </state>
       </provider>
     </entry>

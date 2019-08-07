@@ -15,12 +15,16 @@ class Update {
        }
 
        if (Referee.aiShouldMakeMove(previousMove)) {
-           var aiSymbol = new Symbol("O");
-           int cpuMove = new Minimax(board, aiSymbol, new Symbol("X")).optimal();
-           board.add(cpuMove, aiSymbol);
+           makeAiMove(board);
        }
 
        return updatedGameJson(previousMove, board);
+    }
+
+    private static void makeAiMove(Board board) {
+        var aiSymbol = new Symbol("O");
+        int cpuMove = new Minimax(board, aiSymbol, new Symbol("X")).optimal();
+        board.add(cpuMove, aiSymbol);
     }
 
     private static JsonOutgoing updatedGameJson(JsonIncoming previousMove, Board nextBoard) {
