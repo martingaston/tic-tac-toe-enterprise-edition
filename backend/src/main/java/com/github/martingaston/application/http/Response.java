@@ -60,6 +60,10 @@ public class Response {
             return this;
         }
 
+        public Options send(String body) {
+            return send(Body.from(body));
+        }
+
         public Options send(Body body) {
             this.status(Status.OK);
             this.body = body;
