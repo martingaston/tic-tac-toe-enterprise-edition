@@ -12,8 +12,8 @@ public class API {
     }
 
     public static String update(int position, String jsonString) throws IOException {
-        GameJSON previousGame = Decode.from(jsonString);
-        GameJSON updated = Update.from(position, previousGame);
+        JsonIncoming previousGame = Decode.from(jsonString);
+        JsonOutgoing updated = Update.from(position, previousGame);
         return Encode.from(updated);
     }
 }

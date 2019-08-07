@@ -7,7 +7,7 @@ import com.github.martingaston.tictactoe.board.Symbol;
 import java.util.*;
 
 class Response {
-    static GameJSON initial(String mode) {
+    static JsonOutgoing initial(String mode) {
         List<String> board = new ArrayList<>(Arrays.asList(null, null, null, null, null, null, null, null, null));
 
         Map<String, String> messages = new HashMap<>();
@@ -18,7 +18,7 @@ class Response {
 
         Symbol currentPlayer = new Symbol("X");
 
-        return new GameJSON.Builder()
+        return new JsonOutgoing.Builder()
                 .isActive(true)
                 .board(board)
                 .messages(messages)
@@ -27,8 +27,8 @@ class Response {
                 .build();
     }
 
-    static GameJSON updatedMove(GameJSON previousMove, Board nextBoard) {
-        return new GameJSON.Builder()
+    static JsonOutgoing updatedMove(Json previousMove, Board nextBoard) {
+        return new JsonOutgoing.Builder()
                 .isActive(Referee.gameIsActive(nextBoard))
                 .board(Referee.formatBoard(nextBoard))
                 .currentPlayer(Referee.swapPlayer(previousMove.currentPlayer()))
@@ -37,8 +37,8 @@ class Response {
                 .build();
     }
 
-    static GameJSON gameOver(Board board, Symbol currentPlayer) {
-        return new GameJSON.Builder()
+    static JsonOutgoing gameOver(Board board, Symbol currentPlayer) {
+        return new JsonOutgoing.Builder()
                 .isActive(false)
                 .board(Referee.formatBoard(board))
                 .messages(Referee.getEndingMessage(board, currentPlayer))

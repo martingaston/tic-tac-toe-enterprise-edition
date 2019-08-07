@@ -6,7 +6,7 @@ import com.github.martingaston.tictactoe.board.PopulatedBoard;
 import com.github.martingaston.tictactoe.board.Symbol;
 
 class Update {
-    static GameJSON from(int position, GameJSON previousMove) {
+    static JsonOutgoing from(int position, Json previousMove) {
        Board nextBoard = PopulatedBoard.from(previousMove.board(), new Symbol("X"), new Symbol("O"));
        nextBoard.add(oneIndexedToZeroIndexed(position), previousMove.currentPlayer());
 
@@ -22,11 +22,11 @@ class Update {
        return updatedGameJson(previousMove, nextBoard);
     }
 
-    private static GameJSON updatedGameJson(GameJSON previousMove, Board nextBoard) {
+    private static JsonOutgoing updatedGameJson(Json previousMove, Board nextBoard) {
         return Response.updatedMove(previousMove, nextBoard);
     }
 
-    private static GameJSON gameOver(Board board, Symbol currentPlayer) {
+    private static JsonOutgoing gameOver(Board board, Symbol currentPlayer) {
         return Response.gameOver(board, currentPlayer);
 
     }
