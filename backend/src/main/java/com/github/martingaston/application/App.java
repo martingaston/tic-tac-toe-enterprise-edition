@@ -5,6 +5,7 @@ import com.github.martingaston.application.routes.Routes;
 import com.github.martingaston.application.transport.Connection;
 import com.github.martingaston.application.transport.Port;
 import com.github.martingaston.application.transport.Server;
+import com.github.martingaston.tictactoe.api.API;
 
 import java.io.IOException;
 
@@ -47,24 +48,15 @@ class App {
             Request request = RequestParser.from(client);
             Routes routes = new Routes();
 
-            routes.post("/echo_body", (req, res) -> res.send(req.body()));
+            routes.get("/api/startGame", (req, res) -> res.send(API.init()));
 
-            routes.head("/get_with_body");
-
-            routes.get("/simple_get");
-
-            routes.get("/method_options");
-
-            routes.get("/method_options2");
-
-            routes.post("/method_options2");
-
-            routes.put("/method_options2");
-
-            routes.get("/redirect", (req, res) -> {
-                URI location = URI.from("http://" + req.getHeader("Host") + "/simple_get");
-                return res.redirect(Status.MOVED_PERMANENTLY, location);
+            routes.post("/api/getNextTurn", (req, res) -> {
+                String gameRequestAsJson = req.body().toString();
+                String ticTacToeResult = API.update(1, gameRequestAsJson);
+                return res.send(ticTacToeResult);
             });
+
+            routes.post("/echo_body", (req, res) -> res.send(req.body()));
 
             Router router = new Router(routes);
             Response response = router.respond(request);
