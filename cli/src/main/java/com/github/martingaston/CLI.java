@@ -1,13 +1,11 @@
-package com.github.martingaston.tictactoe;
+package com.github.martingaston;
 
-import com.github.martingaston.tictactoe.cli.Game;
-import com.github.martingaston.tictactoe.cli.IO;
-import com.github.martingaston.tictactoe.state.State;
-import com.github.martingaston.tictactoe.state.StateCLI;
-import com.github.martingaston.tictactoe.state.StateFile;
-import com.github.martingaston.tictactoe.state.StateUserSelect;
-import com.github.martingaston.tictactoe.storage.FileStorage;
-import com.github.martingaston.tictactoe.storage.Storage;
+import com.github.martingaston.state.State;
+import com.github.martingaston.state.StateCLI;
+import com.github.martingaston.state.StateFile;
+import com.github.martingaston.state.StateUserSelect;
+import com.github.martingaston.storage.FileStorage;
+import com.github.martingaston.storage.Storage;
 
 import java.io.IOException;
 import java.util.List;
