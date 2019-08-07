@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 public class EncodeTest {
    @Test
    public void encodesGameJsonObject() throws JsonProcessingException {
-       GameJSON gameJson = new GameJSON.Builder()
+       JsonOutgoing jsonOutgoing = new JsonOutgoing.Builder()
                .mode("ai")
                .currentPlayer(new Symbol("O"))
                .isActive(false)
@@ -23,7 +23,7 @@ public class EncodeTest {
 
        String expected = "{\"board\":[\"X\",\"O\",\"X\",null,null,null,null,null,null],\"currentPlayer\":\"O\",\"isActive\":false,\"messages\":{},\"mode\":\"ai\"}";
 
-       String encoded = Encode.from(gameJson);
+       String encoded = Encode.from(jsonOutgoing);
 
        assertEquals(expected, encoded);
    }

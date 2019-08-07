@@ -12,8 +12,14 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class DecodeTest {
-    private String game = "{\"isActive\":true,\"board\":[null,null,null,null,null,null,null,null,null],\"messages\":{\"title\":\"Tic Tac Toe\"},\"currentPlayer\":\"X\",\"mode\":\"ai\"}";
+    private String game = "{\"position\": 1, \"isActive\":true,\"board\":[null,null,null,null,null,null,null,null,null],\"messages\":{\"title\":\"Tic Tac Toe\"},\"currentPlayer\":\"X\",\"mode\":\"ai\"}";
 
+    @Test
+    public void hasPosition() throws IOException {
+        var decoder = Decode.from(game);
+
+        assertEquals(decoder.position(), 1);
+    }
     @Test
     public void hasIsActiveValue() throws IOException {
         var decoder = Decode.from(game);

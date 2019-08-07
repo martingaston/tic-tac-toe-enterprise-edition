@@ -9,25 +9,25 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-class GameJSON {
+class JsonOutgoing implements Json {
     private final String mode;
     private final Symbol currentPlayer;
-    private boolean isActive;
-    private List<String> board;
-    private Map<String, String> messages;
+    private final boolean isActive;
+    private final List<String> board;
+    private final Map<String, String> messages;
 
     @JsonCreator
-    private static GameJSON from(
+    private static JsonOutgoing from(
             @JsonProperty("mode") String mode,
             @JsonProperty("currentPlayer") String currentPlayer,
             @JsonProperty("isActive") boolean isActive,
             @JsonProperty("board") ArrayList<String> board,
             @JsonProperty("messages") HashMap<String, String> messages
     ) {
-        return new GameJSON(mode, new Symbol(currentPlayer), isActive, board, messages);
+        return new JsonOutgoing(mode, new Symbol(currentPlayer), isActive, board, messages);
     }
 
-    private GameJSON(String mode, Symbol currentPlayer, boolean isActive, List<String> board, Map<String, String> messages) {
+    private JsonOutgoing(String mode, Symbol currentPlayer, boolean isActive, List<String> board, Map<String, String> messages) {
         this.mode = mode;
         this.currentPlayer = currentPlayer;
         this.isActive = isActive;
@@ -72,8 +72,8 @@ class GameJSON {
             return this;
         }
 
-        public GameJSON build() {
-            return new GameJSON(this.mode, this.currentPlayer, this.isActive, this.board, this.messages);
+        public JsonOutgoing build() {
+            return new JsonOutgoing(this.mode, this.currentPlayer, this.isActive, this.board, this.messages);
         }
     }
 
