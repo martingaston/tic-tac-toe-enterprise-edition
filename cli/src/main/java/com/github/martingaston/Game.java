@@ -1,11 +1,11 @@
-package com.github.martingaston.tictactoe.cli;
+package com.github.martingaston;
 
 import com.github.martingaston.tictactoe.Messages;
 import com.github.martingaston.tictactoe.board.Board;
 import com.github.martingaston.tictactoe.player.Player;
 import com.github.martingaston.tictactoe.player.Players;
 import com.github.martingaston.tictactoe.state.State;
-import com.github.martingaston.tictactoe.storage.Storage;
+import com.github.martingaston.storage.Storage;
 
 import java.io.IOException;
 

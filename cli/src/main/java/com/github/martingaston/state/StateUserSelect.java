@@ -1,13 +1,14 @@
-package com.github.martingaston.tictactoe.state;
+package com.github.martingaston.state;
 
 import com.github.martingaston.tictactoe.GameModes;
 import com.github.martingaston.tictactoe.Messages;
+import com.github.martingaston.tictactoe.state.State;
 import com.github.martingaston.tictactoe.board.Board;
 import com.github.martingaston.tictactoe.board.BoardModes;
 import com.github.martingaston.tictactoe.board.Symbol;
-import com.github.martingaston.tictactoe.cli.Display;
-import com.github.martingaston.tictactoe.cli.IO;
-import com.github.martingaston.tictactoe.player.Players;
+import com.github.martingaston.Display;
+import com.github.martingaston.IO;
+import com.github.martingaston.player.CLIPlayers;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class StateUserSelect implements State {
     private BoardModes boardMode;
     private Board board;
     private List<String> contents;
-    private Players players;
+    private CLIPlayers CLIPlayers;
     private String lastMove;
 
     public StateUserSelect(IO io) {
@@ -25,7 +26,7 @@ public class StateUserSelect implements State {
         boardMode = getBoardSize();
         mode = getGameMode();
         board = createBoard(boardMode);
-        players = Players.create(mode, io);
+        CLIPlayers = CLIPlayers.create(mode, io);
     }
 
     public BoardModes getBoardSize() {
@@ -66,8 +67,8 @@ public class StateUserSelect implements State {
     }
 
     @Override
-    public Players players() {
-        return players;
+    public CLIPlayers players() {
+        return CLIPlayers;
     }
 
     @Override

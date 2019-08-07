@@ -1,12 +1,13 @@
-package com.github.martingaston.tictactoe.state;
+package com.github.martingaston.state;
 
 import com.github.martingaston.tictactoe.GameModes;
+import com.github.martingaston.tictactoe.state.State;
 import com.github.martingaston.tictactoe.board.Board;
 import com.github.martingaston.tictactoe.board.BoardModes;
 import com.github.martingaston.tictactoe.board.PopulatedBoard;
 import com.github.martingaston.tictactoe.board.Symbol;
-import com.github.martingaston.tictactoe.cli.IO;
-import com.github.martingaston.tictactoe.player.Players;
+import com.github.martingaston.IO;
+import com.github.martingaston.player.CLIPlayers;
 
 import java.util.List;
 import java.util.Scanner;
@@ -18,7 +19,7 @@ public class StateFile implements State {
     private Symbol playerCross;
     private Symbol playerNought;
     private List<String> contents;
-    private Players players;
+    private CLIPlayers CLIPlayers;
     private String lastMove;
 
     public StateFile(List<String> variables) {
@@ -31,11 +32,11 @@ public class StateFile implements State {
         playerCross = new Symbol(variables.get(2));
         playerNought = new Symbol(variables.get(3));
         contents = variables.subList(5, variables.size());
-        players = Players.create(mode, io);
+        CLIPlayers = CLIPlayers.create(mode, io);
         lastMove = variables.get(4);
 
         if (lastMove().equals("X")) {
-            players.nextTurn();
+            CLIPlayers.nextTurn();
         }
 
         board = PopulatedBoard.from(this);
@@ -61,8 +62,8 @@ public class StateFile implements State {
         return contents;
     }
 
-    public Players players() {
-        return players;
+    public CLIPlayers players() {
+        return CLIPlayers;
     }
 
     public Board board() {

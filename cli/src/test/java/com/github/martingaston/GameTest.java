@@ -1,6 +1,5 @@
-package com.github.martingaston.tictactoe.cli;
+package com.github.martingaston;
 
-import com.github.martingaston.tictactoe.Main;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,7 +30,7 @@ public class GameTest {
         InputStream in = new ByteArrayInputStream(gameInputs.getBytes());
         System.setIn(in);
 
-        Main.main(new String[]{});
+        CLI.main(new String[]{});
 
         String gameOutput = outContent.toString();
 
@@ -46,7 +45,7 @@ public class GameTest {
         InputStream in = new ByteArrayInputStream(gameInputs.getBytes());
         System.setIn(in);
 
-        Main.main(new String[]{});
+        CLI.main(new String[]{});
 
         String gameOutput = outContent.toString();
 
@@ -61,7 +60,7 @@ public class GameTest {
         InputStream in = new ByteArrayInputStream(gameInputs.getBytes());
         System.setIn(in);
 
-        Main.main(new String[]{});
+        CLI.main(new String[]{});
 
         String gameOutput = outContent.toString();
 

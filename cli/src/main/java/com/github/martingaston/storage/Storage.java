@@ -1,4 +1,4 @@
-package com.github.martingaston.tictactoe.storage;
+package com.github.martingaston.storage;
 
 import com.github.martingaston.tictactoe.state.State;
 

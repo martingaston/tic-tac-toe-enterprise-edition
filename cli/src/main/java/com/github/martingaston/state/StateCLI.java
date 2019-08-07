@@ -1,11 +1,12 @@
-package com.github.martingaston.tictactoe.state;
+package com.github.martingaston.state;
 
 import com.github.martingaston.tictactoe.GameModes;
+import com.github.martingaston.tictactoe.state.State;
 import com.github.martingaston.tictactoe.board.Board;
 import com.github.martingaston.tictactoe.board.BoardModes;
 import com.github.martingaston.tictactoe.board.Symbol;
-import com.github.martingaston.tictactoe.cli.IO;
-import com.github.martingaston.tictactoe.player.Players;
+import com.github.martingaston.IO;
+import com.github.martingaston.player.CLIPlayers;
 
 import java.util.HashMap;
 import java.util.List;
@@ -20,7 +21,7 @@ public class StateCLI implements State {
     private BoardModes boardMode;
     private Board board;
     private List<String> contents;
-    private Players players;
+    private CLIPlayers CLIPlayers;
     private String lastMove;
 
     public StateCLI(String[] args) {
@@ -35,7 +36,7 @@ public class StateCLI implements State {
         boardMode = BoardModes.nameOf(boardArg);
         board = createBoard(boardMode);
         mode = GameModes.nameOf(modeArg);
-        players = Players.create(mode, io);
+        CLIPlayers = CLIPlayers.create(mode, io);
     }
 
     private Map<String, String> parseArgs(String[] args) {
@@ -81,8 +82,8 @@ public class StateCLI implements State {
     }
 
     @Override
-    public Players players() {
-        return players;
+    public CLIPlayers players() {
+        return CLIPlayers;
     }
 
     @Override

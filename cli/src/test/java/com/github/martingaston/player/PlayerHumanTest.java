@@ -1,6 +1,7 @@
-package com.github.martingaston.tictactoe.player;
+package com.github.martingaston.player;
 
 import com.github.martingaston.tictactoe.board.Board;
+import com.github.martingaston.tictactoe.player.Player;
 import org.junit.Before;
 import org.junit.Test;
 

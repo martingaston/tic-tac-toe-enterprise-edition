@@ -1,4 +1,4 @@
-package com.github.martingaston.state;
+package com.github.martingaston.tictactoe.state;
 
 import com.github.martingaston.tictactoe.GameModes;
 import com.github.martingaston.tictactoe.board.Board;

@@ -1,10 +1,10 @@
-package com.github.martingaston.tictactoe.player;
+package com.github.martingaston.player;
 
 import com.github.martingaston.tictactoe.Messages;
 import com.github.martingaston.tictactoe.board.Board;
 import com.github.martingaston.tictactoe.board.Symbol;
-import com.github.martingaston.tictactoe.cli.Display;
-import com.github.martingaston.tictactoe.cli.IO;
+import com.github.martingaston.Display;
+import com.github.martingaston.IO;
 
 import java.util.Scanner;
 

@@ -2,21 +2,20 @@ package com.github.martingaston.player;
 
 import com.github.martingaston.tictactoe.board.Board;
 import com.github.martingaston.tictactoe.player.Player;
-import com.github.martingaston.tictactoe.player.Players;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class PlayersTest {
-    private Players players;
+public class CLIPlayersTest {
+    private CLIPlayers players;
 
     @Before
     public void setUp() {
         Board board = new Board();
         Player playerCross = new PlayerHuman("X");
         Player playerNought = new PlayerHuman("O");
-        players = new Players(playerCross, playerNought);
+        players = new CLIPlayers(playerCross, playerNought);
     }
 
     @Test

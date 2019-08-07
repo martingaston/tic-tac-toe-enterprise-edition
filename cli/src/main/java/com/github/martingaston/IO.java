@@ -1,4 +1,4 @@
-package com.github.martingaston.tictactoe.cli;
+package com.github.martingaston;
 
 import java.util.Scanner;
 

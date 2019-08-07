@@ -1,4 +1,4 @@
-package com.github.martingaston.tictactoe.cli;
+package com.github.martingaston;
 
 import com.github.martingaston.tictactoe.board.Board;
 import com.github.martingaston.tictactoe.board.Cell;

@@ -1,6 +1,6 @@
 package com.github.martingaston;
 
-import com.github.martingaston.state.State;
+import com.github.martingaston.tictactoe.state.State;
 import com.github.martingaston.state.StateCLI;
 import com.github.martingaston.state.StateFile;
 import com.github.martingaston.state.StateUserSelect;
@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class CLI {
     public static void main(String[] args) throws IOException {
         IO io = new IO(new Scanner(System.in));
 
