@@ -30,11 +30,13 @@ class Referee {
                 .collect(Collectors.toList());
     }
 
-    static Map<String, String> getEndingMessage(Board board, Symbol currentPlayer) {
+    static Map<String, String> getEndingMessage(Board board) {
         var messages = new HashMap<String, String>();
 
-        if(board.hasWon(currentPlayer)) {
-            messages.put("ending", String.format("Player %s wins!", currentPlayer.toString()));
+        if(board.hasWon(new Symbol("X"))) {
+            messages.put("ending", "Player X wins!");
+        } else if (board.hasWon(new Symbol("O"))) {
+            messages.put("ending", "Player O wins!");
         } else {
             messages.put("ending", Messages.playersDraw());
         }

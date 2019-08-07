@@ -40,11 +40,11 @@ class Responses {
                 .build();
     }
 
-    static JsonOutgoing gameOver(Board board, Symbol currentPlayer) {
+    static JsonOutgoing gameOver(Board board) {
         return new JsonOutgoing.Builder()
                 .isActive(false)
                 .board(Referee.formatBoard(board))
-                .messages(Referee.getEndingMessage(board, currentPlayer))
+                .messages(Referee.getEndingMessage(board))
                 .build();
     }
 }
