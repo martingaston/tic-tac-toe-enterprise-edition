@@ -13,21 +13,21 @@ class RouterTest {
     @BeforeAll
     static void initAll() {
         Routes routes = new Routes();
-        routes.post(URI.from("/echo_body"), (req, res) -> res.send(Body.from(req.body().toString())));
+        routes.post("/echo_body", (req, res) -> res.send(Body.from(req.body().toString())));
 
-        routes.head(URI.from("/get_with_body"));
+        routes.head("/get_with_body");
 
-        routes.get(URI.from("/simple_get"));
+        routes.get("/simple_get");
 
-        routes.get(URI.from("/method_options"));
+        routes.get("/method_options");
 
-        routes.get(URI.from("/method_options2"));
+        routes.get("/method_options2");
 
-        routes.post(URI.from("/method_options2"));
+        routes.post("/method_options2");
 
-        routes.put(URI.from("/method_options2"));
+        routes.put("/method_options2");
 
-        routes.get(URI.from("/redirect"), (req, res) -> {
+        routes.get("/redirect", (req, res) -> {
             URI location = URI.from("http://127.0.0.1:5000/simple_get");
             return res.redirect(Status.MOVED_PERMANENTLY, location);
         });

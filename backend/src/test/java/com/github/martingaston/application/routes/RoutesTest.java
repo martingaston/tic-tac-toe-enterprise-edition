@@ -19,15 +19,15 @@ class RoutesTest {
     @DisplayName("Can register a route")
     @Test
     void canAddPostRoute() {
-        routes.post(URI.from("/refactor_echo_body"), handler);
+        routes.post("/refactor_echo_body", handler);
         assertThat(routes.isValid(Verbs.POST, URI.from("/refactor_echo_body"))).isTrue();
     }
 
     @DisplayName("Can register multiple routes to one path")
     @Test
     void canAddMultipleRoutes() {
-        routes.post(URI.from("/refactor_echo_body"), handler);
-        routes.get(URI.from("/refactor_echo_body"), handler);
+        routes.post("/refactor_echo_body", handler);
+        routes.get("/refactor_echo_body", handler);
         assertThat(routes.isValid(Verbs.GET, URI.from("/refactor_echo_body"))).isTrue();
         assertThat(routes.isValid(Verbs.POST, URI.from("/refactor_echo_body"))).isTrue();
     }
@@ -35,14 +35,14 @@ class RoutesTest {
     @DisplayName("Knows an invalid path")
     @Test
     void knowsAnInvalidPath() {
-        routes.post(URI.from("/correct"), handler);
+        routes.post("/correct", handler);
         assertThat(routes.isValid(Verbs.POST, URI.from("/wrong"))).isFalse();
     }
 
     @DisplayName("Knows an invalid method")
     @Test
     void knowsAnInvalidMethod() {
-        routes.get(URI.from("/get_content"), handler);
+        routes.get("/get_content", handler);
         assertThat(routes.isValid(Verbs.POST, URI.from("/get_content"))).isFalse();
     }
 }
