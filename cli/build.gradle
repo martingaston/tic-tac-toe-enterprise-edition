@@ -1,18 +1,8 @@
-plugins {
-    id "java"
-    id "application"
-    id "idea"
-}
-
 mainClassName = "com.github.martingaston.tictactoe.Main"
 
 sourceCompatibility = "11"
 targetCompatibility = "11"
 version = "1.0-SNAPSHOT"
-
-repositories {
-    jcenter()
-}
 
 run {
     standardInput = System.in
