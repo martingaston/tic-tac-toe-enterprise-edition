@@ -48,12 +48,12 @@ class App {
             Request request = RequestParser.from(client);
             Routes routes = new Routes();
 
-            routes.get("/api/startGame", (req, res) -> res.send(API.startGame()));
+            routes.get("/api/startGame", (req, res) -> res.json(API.startGame()));
 
             routes.post("/api/getNextTurn", (req, res) -> {
                 String gameRequestAsJson = req.body().toString();
                 String ticTacToeResult = API.getNextTurn(gameRequestAsJson);
-                return res.send(ticTacToeResult);
+                return res.json(ticTacToeResult);
             });
 
             routes.post("/echo_body", (req, res) -> res.send(req.body()));

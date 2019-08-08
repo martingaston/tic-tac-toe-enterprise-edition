@@ -21,7 +21,7 @@ class ResponseTest {
             assertThat(response.body()).isEqualTo(Body.from("Hello World"));
             assertThat(response.headers().get("Content-Length")).isEqualTo("11");
         }
-        
+
         @Test
         void buildsJsonResponse() {
             Response response = new Response.Options(Status.OK)
