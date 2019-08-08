@@ -9,7 +9,7 @@ class Update {
        board.add(oneIndexedToZeroIndexed(currentGame.position()), currentGame.currentPlayer());
 
        if (board.isGameOver()) {
-           return gameOver(board, currentGame.currentPlayer());
+           return gameOver(board);
        }
 
        if (Referee.aiShouldMakeMove(currentGame)) {
@@ -29,8 +29,8 @@ class Update {
         return Responses.updatedMove(currentGame, updatedBoard);
     }
 
-    private static JsonOutgoing gameOver(Board finalBoard, Symbol finalPlayer) {
-        return Responses.gameOver(finalBoard, finalPlayer);
+    private static JsonOutgoing gameOver(Board finalBoard) {
+        return Responses.gameOver(finalBoard);
 
     }
 

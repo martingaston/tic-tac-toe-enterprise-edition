@@ -35,7 +35,7 @@ class JsonOutgoing implements Json {
 
     public static class Builder {
         private String mode;
-        private Symbol currentPlayer;
+        private Symbol currentPlayer = new Symbol("");
         private boolean isActive;
         private List<String> board;
         private Map<String, String> messages;
