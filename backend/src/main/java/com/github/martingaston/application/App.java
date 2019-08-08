@@ -5,7 +5,7 @@ import com.github.martingaston.application.routes.Routes;
 import com.github.martingaston.application.transport.Connection;
 import com.github.martingaston.application.transport.Port;
 import com.github.martingaston.application.transport.Server;
-import com.github.martingaston.tictactoe.api.API;
+import com.github.martingaston.API;
 
 import java.io.IOException;
 
