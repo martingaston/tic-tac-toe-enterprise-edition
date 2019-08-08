@@ -76,6 +76,7 @@ public class Response {
 
         public Options json(Body body) {
             this.addHeader("Content-Type", "application/json");
+            this.addHeader("Access-Control-Allow-Origin", "*");
             this.body = body;
             return this;
         }
