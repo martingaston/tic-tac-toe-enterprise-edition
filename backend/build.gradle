@@ -5,7 +5,7 @@ targetCompatibility = "11"
 version = "0.1"
 
 dependencies {
-  compile project(':tictactoe')
+  compile project(':api')
 
   testImplementation group: "org.assertj", name: "assertj-core", version: "3.12.2"
   testImplementation('org.junit.jupiter:junit-jupiter:5.5.1')

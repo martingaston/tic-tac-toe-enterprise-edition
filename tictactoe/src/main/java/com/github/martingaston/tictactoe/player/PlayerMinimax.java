@@ -8,8 +8,7 @@ public class PlayerMinimax implements com.github.martingaston.tictactoe.player.P
     private final Symbol symbol;
     private final Symbol opponent;
 
-
-    PlayerMinimax(String symbol, Symbol opponent) {
+    public PlayerMinimax(String symbol, Symbol opponent) {
         this.symbol = new Symbol(symbol);
         this.opponent = opponent;
     }

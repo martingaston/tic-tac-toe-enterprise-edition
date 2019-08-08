@@ -5,9 +5,13 @@
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds/
  */
 
+
+configure(subprojects.findAll { it.name == 'cli' || it.name == 'backend' }) {
+  apply plugin: 'application'
+}
+
 subprojects {
   apply plugin: 'java'
-  apply plugin: 'application'
   apply plugin: 'idea'
   apply plugin: 'jacoco'
 

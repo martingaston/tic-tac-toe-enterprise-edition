@@ -1,7 +1,7 @@
 package com.github.martingaston.tictactoe;
 
 import com.github.martingaston.tictactoe.player.Player;
-import com.github.martingaston.tictactoe.player.PlayerHuman;
+import com.github.martingaston.tictactoe.player.PlayerCPU;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,7 +16,7 @@ public class MessagesTest {
 
     @Before
     public void setUp() {
-        player = new PlayerHuman("X");
+        player = new PlayerCPU("X");
     }
 
     @Test
