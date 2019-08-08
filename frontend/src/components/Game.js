@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import Row from './Row'
-import update from '../game/update'
 import init from '../game/init'
 import parseMessage from '../utils/parseMessage'
 import parseRows from '../utils/parseRows'
+import { getNextTurnFromServer } from '../utils/communications'
 
 const Game = ({ mode }) => {
   const [game, updateGame] = useState(init(mode))
 
-  const onClick = position => {
-    updateGame(update(position, game))
+  const onClick = async position => {
+    const responseFromServer = await getNextTurnFromServer(position, game)
+    updateGame(responseFromServer)
   }
 
   return (
