@@ -21,6 +21,16 @@ class ResponseTest {
             assertThat(response.body()).isEqualTo(Body.from("Hello World"));
             assertThat(response.headers().get("Content-Length")).isEqualTo("11");
         }
+        
+        @Test
+        void buildsJsonResponse() {
+            Response response = new Response.Options(Status.OK)
+                    .json("{\"hello\":\"world\"}")
+                    .build();
+
+            assertThat(response.status()).isEqualTo(Status.OK);
+            assertThat(response.headers().get("Content-Type")).isEqualTo("application/json");
+        }
 
         @Test
         void builds404Response() {

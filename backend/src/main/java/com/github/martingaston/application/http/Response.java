@@ -70,6 +70,16 @@ public class Response {
             return this;
         }
 
+        public Options json(String body) {
+            return json(Body.from(body));
+        }
+
+        public Options json(Body body) {
+            this.addHeader("Content-Type", "application/json");
+            this.body = body;
+            return this;
+        }
+
         private void addContentLength(int length) {
             this.headers.add("Content-Length", length);
         }
