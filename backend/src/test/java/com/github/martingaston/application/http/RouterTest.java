@@ -3,6 +3,8 @@ package com.github.martingaston.application.http;
 import com.github.martingaston.application.routes.Routes;
 import org.junit.jupiter.api.*;
 
+import java.io.IOException;
+
 import static org.assertj.core.api.Assertions.*;
 
 @DisplayName("A Router class")
@@ -45,7 +47,7 @@ class RouterTest {
         private Response response;
 
         @BeforeEach
-        void init() {
+        void init() throws IOException {
             request = new Request(new RequestLine(Verbs.POST, URI.from("/echo_body"), Version.V1POINT1), headers, Body.from("It is a truth universally acknowledged..."));
             response = router.respond(request);
         }
@@ -70,7 +72,7 @@ class RouterTest {
         private Response response;
 
         @BeforeEach
-        void init() {
+        void init() throws IOException {
             request = new Request(new RequestLine(Verbs.GET, URI.from("/get_with_body"), Version.V1POINT1), headers, Body.from(""));
             response = router.respond(request);
         }
@@ -89,7 +91,7 @@ class RouterTest {
         private Response response;
 
         @BeforeEach
-        void init() {
+        void init() throws IOException {
             request = new Request(new RequestLine(Verbs.HEAD, URI.from("/simple_get"), Version.V1POINT1), headers, Body.from(""));
             response = router.respond(request);
         }
@@ -120,7 +122,7 @@ class RouterTest {
         private Response response;
 
         @BeforeEach
-        void init() {
+        void init() throws IOException {
             request = new Request(new RequestLine(Verbs.OPTIONS, URI.from("/method_options"), Version.V1POINT1), headers, Body.from(""));
             response = router.respond(request);
         }
@@ -151,7 +153,7 @@ class RouterTest {
         private Response response;
 
         @BeforeEach
-        void init() {
+        void init() throws IOException {
             request = new Request(new RequestLine(Verbs.OPTIONS, URI.from("/method_options2"), Version.V1POINT1), headers, Body.from(""));
             response = router.respond(request);
         }
@@ -180,7 +182,7 @@ class RouterTest {
     class canRouteInvalidPath {
         @DisplayName("Returns a 404 status code")
         @Test
-        void returns404StatusCode() {
+        void returns404StatusCode() throws IOException {
             Request request = new Request(new RequestLine(Verbs.POST, URI.from("/totally_invalid_path"), Version.V1POINT1), headers, Body.from("It is a truth universally acknowledged..."));
             Response response = router.respond(request);
             assertThat(response.status()).isEqualTo(Status.NOT_FOUND);
@@ -191,7 +193,7 @@ class RouterTest {
     @Nested
     class canRouteBadRequests {
         @DisplayName("With an invalid method")
-        @Test void withInvalidMethod() {
+        @Test void withInvalidMethod() throws IOException {
            Request request = new Request(new RequestLine(Verbs.INVALID, URI.from("/echo_body"), Version.V1POINT1), headers, Body.from(""));
            Response response = router.respond(request);
 
@@ -199,7 +201,7 @@ class RouterTest {
         }
 
         @DisplayName("Without a Host header")
-        @Test void withoutHostHeader() {
+        @Test void withoutHostHeader() throws IOException {
             Request request = new Request(new RequestLine(Verbs.POST, URI.from("/echo_body"), Version.V1POINT1), new Headers(), Body.from(""));
             Response response = router.respond(request);
 
@@ -207,7 +209,7 @@ class RouterTest {
         }
 
         @DisplayName("With an invalid HTTP version")
-        @Test void withInvalidVersion() {
+        @Test void withInvalidVersion() throws IOException {
             Request request = new Request(new RequestLine(Verbs.POST, URI.from("/echo_body"), Version.INVALID), headers, Body.from(""));
             Response response = router.respond(request);
 
@@ -222,7 +224,7 @@ class RouterTest {
         private Response response;
 
         @BeforeEach
-        void init() {
+        void init() throws IOException {
             request = new Request(new RequestLine(Verbs.GET, URI.from("/redirect"), Version.V1POINT1), headers, Body.from(""));
             response = router.respond(request);
         }

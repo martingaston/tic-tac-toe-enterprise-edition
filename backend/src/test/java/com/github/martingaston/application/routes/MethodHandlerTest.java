@@ -3,6 +3,8 @@ package com.github.martingaston.application.routes;
 import com.github.martingaston.application.http.*;
 import org.junit.jupiter.api.*;
 
+import java.io.IOException;
+
 import static org.assertj.core.api.Assertions.*;
 
 @DisplayName("A MethodHandler class")
@@ -35,7 +37,7 @@ class MethodHandlerTest {
 
     @DisplayName("Does not overwrite existing methods once added")
     @Test
-    void doesNotOverwrite() {
+    void doesNotOverwrite() throws IOException {
         var request = new Request(new RequestLine(Verbs.POST, URI.from("/refactor_echo_body"), Version.V1POINT1), new Headers(), Body.from("It is a truth universally acknowledged..."));
         methodHandler.addMethod(Verbs.POST, (req, res) -> res.body(Body.from("ABC")));
         methodHandler.addMethod(Verbs.POST, (req, res) -> res.body(Body.from("DEF")));
