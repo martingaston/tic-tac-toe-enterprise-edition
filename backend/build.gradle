@@ -12,7 +12,7 @@ dependencies {
 }
 
 jar {
-  archiveFileName = "${archiveBaseName.get()}.${archiveExtension.get()}"
+  archiveFileName = "tictactoe-${archiveBaseName.get()}.${archiveExtension.get()}"
   manifest {
     attributes(
     "Main-Class": mainClassName,
