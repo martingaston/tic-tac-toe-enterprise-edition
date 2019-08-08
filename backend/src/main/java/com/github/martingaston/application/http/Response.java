@@ -60,8 +60,22 @@ public class Response {
             return this;
         }
 
+        public Options send(String body) {
+            return send(Body.from(body));
+        }
+
         public Options send(Body body) {
             this.status(Status.OK);
+            this.body = body;
+            return this;
+        }
+
+        public Options json(String body) {
+            return json(Body.from(body));
+        }
+
+        public Options json(Body body) {
+            this.addHeader("Content-Type", "application/json");
             this.body = body;
             return this;
         }

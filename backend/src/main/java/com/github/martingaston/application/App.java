@@ -5,6 +5,7 @@ import com.github.martingaston.application.routes.Routes;
 import com.github.martingaston.application.transport.Connection;
 import com.github.martingaston.application.transport.Port;
 import com.github.martingaston.application.transport.Server;
+import com.github.martingaston.API;
 
 import java.io.IOException;
 
@@ -47,24 +48,15 @@ class App {
             Request request = RequestParser.from(client);
             Routes routes = new Routes();
 
-            routes.post(URI.from("/echo_body"), (req, res) -> res.send(req.body()));
+            routes.get("/api/startGame", (req, res) -> res.json(API.startGame()));
 
-            routes.head(URI.from("/get_with_body"));
-
-            routes.get(URI.from("/simple_get"));
-
-            routes.get(URI.from("/method_options"));
-
-            routes.get(URI.from("/method_options2"));
-
-            routes.post(URI.from("/method_options2"));
-
-            routes.put(URI.from("/method_options2"));
-
-            routes.get(URI.from("/redirect"), (req, res) -> {
-                URI location = URI.from("http://" + req.getHeader("Host") + "/simple_get");
-                return res.redirect(Status.MOVED_PERMANENTLY, location);
+            routes.post("/api/getNextTurn", (req, res) -> {
+                String gameRequestAsJson = req.body().toString();
+                String ticTacToeResult = API.getNextTurn(gameRequestAsJson);
+                return res.json(ticTacToeResult);
             });
+
+            routes.post("/echo_body", (req, res) -> res.send(req.body()));
 
             Router router = new Router(routes);
             Response response = router.respond(request);

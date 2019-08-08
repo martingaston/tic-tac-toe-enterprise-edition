@@ -23,6 +23,16 @@ class ResponseTest {
         }
 
         @Test
+        void buildsJsonResponse() {
+            Response response = new Response.Options(Status.OK)
+                    .json("{\"hello\":\"world\"}")
+                    .build();
+
+            assertThat(response.status()).isEqualTo(Status.OK);
+            assertThat(response.headers().get("Content-Type")).isEqualTo("application/json");
+        }
+
+        @Test
         void builds404Response() {
             Response response = new Response.Options(Status.NOT_FOUND).build();
 

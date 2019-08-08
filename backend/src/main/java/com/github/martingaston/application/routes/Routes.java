@@ -11,45 +11,45 @@ public class Routes {
 
     private Handler emptyResponse = (req, res) -> res;
 
-    public void get(URI uri) {
+    public void get(String uri) {
         get(uri, emptyResponse);
     }
 
-    public void get(URI uri, Handler handler) {
+    public void get(String uri, Handler handler) {
         addRoute(Verbs.GET, uri, handler);
         addRoute(Verbs.HEAD, uri, handler);
         addRoute(Verbs.OPTIONS, uri, handler);
     }
 
-    public void post (URI uri) {
+    public void post (String uri) {
         post(uri, emptyResponse);
     }
 
-    public void post(URI uri, Handler handler) {
+    public void post(String uri, Handler handler) {
         addRoute(Verbs.POST, uri, handler);
         addRoute(Verbs.OPTIONS, uri, handler);
     }
 
-    public void put(URI uri) {
+    public void put(String uri) {
         put(uri, emptyResponse);
     }
 
-    public void put(URI uri, Handler handler) {
+    public void put(String uri, Handler handler) {
         addRoute(Verbs.PUT, uri, handler);
         addRoute(Verbs.OPTIONS, uri, handler);
     }
 
-    public void head(URI uri) {
+    public void head(String uri) {
         head(uri, emptyResponse);
     }
 
-    public void head(URI uri, Handler handler) {
+    public void head(String uri, Handler handler) {
         addRoute(Verbs.HEAD, uri, handler);
         addRoute(Verbs.OPTIONS, uri, handler);
     }
 
-    private void addRoute(Verbs method, URI uri, Handler handler) {
-        paths.addPath(uri, new MethodHandler()).addMethod(method, handler);
+    private void addRoute(Verbs method, String uri, Handler handler) {
+        paths.addPath(URI.from(uri), new MethodHandler()).addMethod(method, handler);
     }
 
     public boolean isValid(Verbs method, URI uri) {
