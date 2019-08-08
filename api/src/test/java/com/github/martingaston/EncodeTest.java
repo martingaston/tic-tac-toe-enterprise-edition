@@ -1,3 +1,5 @@
+package com.github.martingaston;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.martingaston.tictactoe.board.Symbol;
 import org.junit.Test;

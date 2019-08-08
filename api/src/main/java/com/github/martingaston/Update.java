@@ -1,3 +1,5 @@
+package com.github.martingaston;
+
 import com.github.martingaston.tictactoe.Minimax;
 import com.github.martingaston.tictactoe.board.Board;
 import com.github.martingaston.tictactoe.board.PopulatedBoard;

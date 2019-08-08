@@ -1,3 +1,5 @@
+package com.github.martingaston;
+
 import java.io.IOException;
 
 public class API {

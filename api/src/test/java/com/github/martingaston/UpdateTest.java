@@ -1,3 +1,5 @@
+package com.github.martingaston;
+
 import com.github.martingaston.tictactoe.board.Symbol;
 import org.junit.Test;
 
