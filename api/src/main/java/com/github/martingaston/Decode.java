@@ -1,3 +1,5 @@
+package com.github.martingaston;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 
