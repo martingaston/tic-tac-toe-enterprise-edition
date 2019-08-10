@@ -70,8 +70,23 @@ public class Router {
 
     private static Response sendOptionsResponse(Request request, Response.Options response, Routes routes) {
         response.addHeader("Allow", routes.validAtPath(request));
+
+        if (isACorsRequest(request)) {
+            addCorsPreflightHeaders(request, response, routes);
+        }
+
         response.body(Body.from(""));
         return response.build();
+    }
+
+    private static void addCorsPreflightHeaders(Request request, Response.Options response, Routes routes) {
+        response.addHeader("Access-Control-Allow-Origin", request.getHeader("origin"));
+        response.addHeader("Access-Control-Allow-Methods", routes.validAtPath(request));
+        response.addHeader("Access-Control-Allow-Headers", "accept, accept-language, content-language, content-type, origin");
+    }
+
+    private static boolean isACorsRequest(Request request) {
+        return request.hasHeader("Access-Control-Request-Method");
     }
 
     private static boolean headRequest(Request request) {
