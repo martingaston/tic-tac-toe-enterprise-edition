@@ -80,7 +80,7 @@ public class Router {
     }
 
     private static void addCorsPreflightHeaders(Request request, Response.Options response, Routes routes) {
-        response.addHeader("Access-Control-Allow-Origin", request.getHeader("origin"));
+        response.addHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
         response.addHeader("Access-Control-Allow-Methods", routes.validAtPath(request));
         response.addHeader("Access-Control-Allow-Headers", "accept, accept-language, content-language, content-type, origin");
     }
