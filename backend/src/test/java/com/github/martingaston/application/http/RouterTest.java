@@ -144,29 +144,6 @@ class RouterTest {
         void returnsContentLengthHeader() {
             assertThat(response.headers().get("Allow")).isEqualTo("GET, HEAD, OPTIONS");
         }
-
-        @DisplayName("Does not have CORS headers if not a CORS preflight request")
-        @Test
-        void doesNotHaveCorsHeadersWhenNotCorsRequest() {
-            assertThat(response.headers().contains("Access-Control-Allow-Origin")).isFalse();
-            assertThat(response.headers().contains("Access-Control-Allow-Methods")).isFalse();
-            assertThat(response.headers().contains("Access-Control-Allow-Headers")).isFalse();
-        }
-
-        @DisplayName("Does contains CORS headers when is a CORS request")
-        @Test
-        void doesContainCorsHeadersWhenCorsRequest() throws IOException {
-            Headers corsHeaders = new Headers();
-            corsHeaders.add("Host", "localhost:5000");
-            corsHeaders.add("Access-Control-Request-Method", "GET");
-            var corsRequest = new Request(new RequestLine(Verbs.OPTIONS, URI.from("/method_options"), Version.V1POINT1), corsHeaders, Body.from(""));
-
-            var corsResponse = router.respond(corsRequest);
-
-            assertThat(corsResponse.headers().contains("Access-Control-Allow-Origin")).isTrue();
-            assertThat(corsResponse.headers().contains("Access-Control-Allow-Methods")).isTrue();
-            assertThat(corsResponse.headers().contains("Access-Control-Allow-Headers")).isTrue();
-        }
     }
 
     @DisplayName("With an OPTIONS request on GET, POST and PUT path")
